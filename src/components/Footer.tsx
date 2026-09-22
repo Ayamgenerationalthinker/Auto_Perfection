@@ -1,4 +1,4 @@
-import { MessageSquare, Phone, MapPin, Navigation, ArrowUp } from "lucide-react";
+import { MessageSquare, Phone, Navigation, ArrowUp } from "lucide-react";
 import { BUSINESS_INFO } from "../data/business";
 
 export const Footer = () => {
@@ -18,11 +18,7 @@ export const Footer = () => {
             <p className="text-xs text-slate-400 mb-6 max-w-sm leading-relaxed">
               Professional automotive repair, electrical diagnostics, oil servicing, spray painting, and body parts in Accra.
             </p>
-            <div className="flex flex-col gap-2.5 text-xs">
-              <span className="flex items-center gap-2 text-slate-300">
-                <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                {BUSINESS_INFO.location.address}
-              </span>
+            <div className="flex flex-col gap-2 text-xs">
               <a
                 href={`tel:${BUSINESS_INFO.contact.phoneRaw}`}
                 className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors"

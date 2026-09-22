@@ -1,6 +1,5 @@
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
-import { BrakeAssembly3D } from "./components/BrakeAssembly3D";
 import { ServicesSection } from "./components/ServicesSection";
 import { AutomotiveVideoPlayer } from "./components/AutomotiveVideoPlayer";
 import { LocationSection } from "./components/LocationSection";
@@ -11,33 +10,30 @@ import { MobileActionBar } from "./components/MobileActionBar";
 export function App() {
   return (
     <div className="min-h-screen bg-[#0B0D10] text-[#F4F5F7] flex flex-col selection:bg-amber-400 selection:text-black">
-      {/* 01 Brand & Quick Navigation */}
+      {/* Brand Navigation */}
       <Navbar />
 
       <main className="flex-grow">
-        {/* 02 Hero: Brand Presence & Immediate Human Understanding */}
+        {/* Hero: Authoritative Brand & Verified Capabilities */}
         <Hero />
 
-        {/* 03 3D Mechanical Interaction: Precision Inspection (Ventilated Rotor & Caliper) */}
-        <BrakeAssembly3D />
-
-        {/* 04 Editorial Services: 01 to 05 Verified Capabilities */}
+        {/* Editorial Services 01 to 05 */}
         <ServicesSection />
 
-        {/* 05 Cinematic Motion Studies: Workshop Precision in Action */}
+        {/* Workshop in Motion: Cinematic HTML5 Video with Hover-to-Play */}
         <AutomotiveVideoPlayer />
 
-        {/* 06 Primary Workshop Location & Google Map Navigation */}
+        {/* Sole Location Feature & Working Google Map */}
         <LocationSection />
 
-        {/* 07 Google Reputation: 4.9 ★ Rating & 64 Reviews */}
+        {/* Google Reviews */}
         <TrustBar />
       </main>
 
-      {/* 08 Footer */}
+      {/* Footer */}
       <Footer />
 
-      {/* Mobile Sticky Quick Action Bar: CALL | WHATSAPP | DIRECTIONS */}
+      {/* Mobile Sticky Quick Action Bar */}
       <MobileActionBar />
     </div>
   );

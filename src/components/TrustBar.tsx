@@ -22,7 +22,7 @@ export const TrustBar = () => {
                 64 Verified Google Reviews
               </h3>
               <p className="text-xs sm:text-sm text-slate-400 mt-1">
-                Public customer ratings for Auto Perfection Centre at Star Oil, La-Bawaleshi Road, Accra.
+                Verified customer ratings and service reviews for Auto Perfection Centre.
               </p>
             </div>
           </div>

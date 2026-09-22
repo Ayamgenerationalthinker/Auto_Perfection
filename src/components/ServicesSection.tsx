@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MessageSquare, ArrowRight, ShieldCheck } from "lucide-react";
+import { ArrowRight, ShieldCheck } from "lucide-react";
 import { BUSINESS_INFO, type ServiceItem } from "../data/business";
 
 export const ServicesSection = () => {
@@ -15,14 +15,14 @@ export const ServicesSection = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <span className="text-xs font-mono uppercase tracking-widest text-amber-400 block mb-2">
-              Verified Workshop Categories
+              Verified Capabilities
             </span>
             <h2 className="text-3xl sm:text-5xl font-display font-black text-white tracking-tight uppercase">
               Automotive Services
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-slate-400 max-w-md font-normal">
-            Select a service category to review verified capabilities at Auto Perfection Centre, Star Oil, La-Bawaleshi Road.
+            Specialized automotive service categories provided by Auto Perfection Centre.
           </p>
         </div>
 
@@ -79,7 +79,7 @@ export const ServicesSection = () => {
             })}
           </div>
 
-          {/* Right Column: Active Service Visual (NO Spammy Buttons) */}
+          {/* Right Column: Active Service Visual (Clean Editorial - NO buttons) */}
           <div className="lg:col-span-7 flex">
             <div className="w-full rounded-2xl bg-[#12151D] border border-white/10 overflow-hidden shadow-2xl flex flex-col justify-between">
               {/* Strictly Verified Corresponding Photo */}
@@ -99,7 +99,7 @@ export const ServicesSection = () => {
                 </div>
               </div>
 
-              {/* Service Details & Single Clean Consultation Prompt */}
+              {/* Service Details */}
               <div className="p-8 flex-1 flex flex-col justify-between">
                 <div>
                   <h4 className="text-2xl font-display font-black text-white uppercase tracking-wide mb-2">
@@ -113,22 +113,9 @@ export const ServicesSection = () => {
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-white/10 flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-xs text-slate-400">
-                    <ShieldCheck className="w-4 h-4 text-amber-400 shrink-0" />
-                    <span>Verified public category in Accra</span>
-                  </div>
-
-                  {/* Single Clean WhatsApp Action for active service */}
-                  <a
-                    href={BUSINESS_INFO.contact.getWhatsAppUrl(activeService.name)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-black text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
-                  >
-                    <MessageSquare className="w-3.5 h-3.5" />
-                    <span>WhatsApp Enquiry</span>
-                  </a>
+                <div className="pt-6 border-t border-white/10 flex items-center gap-2 text-xs text-slate-400">
+                  <ShieldCheck className="w-4 h-4 text-amber-400 shrink-0" />
+                  <span>Verified service category at Auto Perfection Centre</span>
                 </div>
               </div>
             </div>
@@ -162,19 +149,9 @@ export const ServicesSection = () => {
                 <p className="text-xs font-semibold text-amber-400/90 mb-2 font-display uppercase tracking-wider">
                   {svc.tagline}
                 </p>
-                <p className="text-xs text-slate-300 leading-relaxed mb-6 font-normal">
+                <p className="text-xs text-slate-300 leading-relaxed font-normal">
                   {svc.description}
                 </p>
-
-                <a
-                  href={BUSINESS_INFO.contact.getWhatsAppUrl(svc.name)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-black text-xs font-bold uppercase tracking-wider transition-colors"
-                >
-                  <MessageSquare className="w-4 h-4" />
-                  <span>Enquire on WhatsApp</span>
-                </a>
               </div>
             </div>
           ))}

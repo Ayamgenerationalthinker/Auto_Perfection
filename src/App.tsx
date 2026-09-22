@@ -5,7 +5,6 @@ import { AutomotiveVideoPlayer } from "./components/AutomotiveVideoPlayer";
 import { LocationSection } from "./components/LocationSection";
 import { TrustBar } from "./components/TrustBar";
 import { Footer } from "./components/Footer";
-import { MobileActionBar } from "./components/MobileActionBar";
 
 export function App() {
   return (
@@ -32,9 +31,6 @@ export function App() {
 
       {/* Footer */}
       <Footer />
-
-      {/* Mobile Sticky Quick Action Bar */}
-      <MobileActionBar />
     </div>
   );
 }

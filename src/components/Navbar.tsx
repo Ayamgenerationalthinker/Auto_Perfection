@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { MessageSquare, Phone, MapPin, Menu, X } from "lucide-react";
+import { MessageSquare, Phone, MapPin, Menu, X, Star } from "lucide-react";
 import { BUSINESS_INFO } from "../data/business";
 
 export const Navbar = () => {
@@ -14,52 +14,51 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { label: "Services", href: "#services" },
-    { label: "Workshop", href: "#workshop" },
-    { label: "Reviews", href: "#reviews" },
-    { label: "Location", href: "#location" },
-  ];
-
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         scrolled
-          ? "bg-[#0C0D10]/95 backdrop-blur-md border-b border-white/10 py-3.5 shadow-xl"
-          : "bg-transparent border-b border-white/5 py-4"
+          ? "bg-[#0A0B0E]/95 backdrop-blur-md border-b border-white/10 py-3 shadow-2xl"
+          : "bg-[#0A0B0E]/80 backdrop-blur-sm border-b border-white/5 py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo & Brand Name */}
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 rounded-lg bg-[#14171E] border border-amber-500/40 flex items-center justify-center text-amber-400 font-display font-black text-sm tracking-wider">
-              APC
-            </div>
-            <div>
-              <span className="font-display font-bold text-white text-base sm:text-lg tracking-wide uppercase block leading-tight">
-                {BUSINESS_INFO.name}
-              </span>
-              <span className="text-[11px] text-slate-400 font-medium flex items-center gap-1">
-                <MapPin className="w-3 h-3 text-amber-400 inline" /> Accra, Ghana
-              </span>
-            </div>
+          {/* Prominent Typographic Brand Identity */}
+          <a href="#" className="flex flex-col text-left group focus:outline-none">
+            <span className="font-display font-black text-white text-lg sm:text-xl md:text-2xl tracking-wider uppercase leading-none group-hover:text-amber-400 transition-colors">
+              {BUSINESS_INFO.name}
+            </span>
+            <span className="text-[11px] text-slate-400 font-mono tracking-wide uppercase mt-1 flex items-center gap-1">
+              <MapPin className="w-3 h-3 text-amber-400 inline shrink-0" />
+              Star Oil, La-Bawaleshi Rd • Accra
+            </span>
           </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-xs font-semibold text-slate-300 hover:text-white uppercase tracking-wider transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+          {/* Desktop Navigation Links */}
+          <nav className="hidden lg:flex items-center gap-8">
+            <a
+              href="#services"
+              className="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white transition-colors"
+            >
+              Services (01–05)
+            </a>
+            <a
+              href="#location"
+              className="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white transition-colors"
+            >
+              Location & Map
+            </a>
+            <a
+              href="#reputation"
+              className="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-amber-400 transition-colors flex items-center gap-1.5"
+            >
+              <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+              4.9 ★ Rating (64 Reviews)
+            </a>
           </nav>
 
-          {/* Desktop Action Buttons */}
+          {/* Desktop Direct Contact CTAs */}
           <div className="hidden sm:flex items-center gap-3">
             <a
               href={`tel:${BUSINESS_INFO.contact.phoneRaw}`}
@@ -79,31 +78,43 @@ export const Navbar = () => {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Toggle */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg bg-white/5 text-slate-300 hover:text-white border border-white/10"
+            className="sm:hidden p-2 rounded-lg bg-white/5 text-slate-300 hover:text-white border border-white/10"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
 
-        {/* Mobile Menu Dropdown */}
+        {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-3 p-4 bg-[#12141A] rounded-xl border border-white/10 shadow-2xl">
+          <div className="sm:hidden mt-3 p-4 bg-[#111319] rounded-xl border border-white/10 shadow-2xl">
             <div className="flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2 text-sm font-medium text-slate-200 hover:text-amber-400 rounded-lg hover:bg-white/5"
-                >
-                  {link.label}
-                </a>
-              ))}
+              <a
+                href="#services"
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-3 py-2 text-sm font-semibold text-white hover:text-amber-400 rounded-lg hover:bg-white/5"
+              >
+                Services (01–05)
+              </a>
+              <a
+                href="#location"
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-3 py-2 text-sm font-semibold text-white hover:text-amber-400 rounded-lg hover:bg-white/5"
+              >
+                Location & Map
+              </a>
+              <a
+                href="#reputation"
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-3 py-2 text-sm font-semibold text-amber-400 hover:text-amber-300 rounded-lg hover:bg-white/5 flex items-center gap-2"
+              >
+                <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                4.9 ★ Google Reviews (64)
+              </a>
               <div className="h-px bg-white/10 my-2" />
               <div className="flex flex-col gap-2">
                 <a

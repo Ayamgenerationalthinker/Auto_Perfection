@@ -3,121 +3,122 @@ import { BUSINESS_INFO } from "../data/business";
 
 export const LocationSection = () => {
   return (
-    <section id="location" className="py-20 bg-[#0C0D10] border-t border-white/5">
+    <section id="location" className="py-24 bg-[#0A0B0E] border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl mb-12">
-          <span className="text-xs uppercase tracking-widest text-amber-400 font-semibold mb-2 block">
-            Location & Access
+        {/* Section Header */}
+        <div className="max-w-3xl mb-16">
+          <span className="text-xs font-mono uppercase tracking-widest text-amber-400 block mb-2">
+            Workshop Location
           </span>
-          <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white tracking-tight">
-            Star Oil, La-Bawaleshi Road
+          <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight uppercase">
+            Find Us In Accra
           </h2>
-          <p className="text-sm sm:text-base text-slate-400 mt-2">
-            Conveniently situated in Accra. Reach out directly or navigate straight to the workshop.
+          <p className="text-sm sm:text-base text-slate-300 mt-2 font-normal">
+            Located directly at Star Oil on La-Bawaleshi Road.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Contact Details Card */}
-          <div className="lg:col-span-5 p-8 rounded-2xl bg-[#13161C] border border-white/8 flex flex-col justify-between shadow-xl">
+          {/* Left Column: Prominent Workshop Information */}
+          <div className="lg:col-span-5 p-8 sm:p-10 rounded-2xl bg-[#12141C] border border-white/10 flex flex-col justify-between shadow-2xl">
             <div>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-[#181C24] border border-amber-500/30 flex items-center justify-center font-display font-bold text-amber-400 text-sm">
-                  APC
-                </div>
-                <div>
-                  <h3 className="font-display font-bold text-lg text-white">
-                    {BUSINESS_INFO.name}
-                  </h3>
-                  <span className="text-xs text-slate-400">Accra, Ghana</span>
-                </div>
+              {/* Brand Wordmark Lockup */}
+              <div className="mb-8">
+                <span className="text-xs font-mono uppercase tracking-wider text-amber-400 block mb-1">
+                  Automotive Workshop
+                </span>
+                <h3 className="font-display font-black text-2xl sm:text-3xl text-white uppercase tracking-tight leading-tight">
+                  {BUSINESS_INFO.name}
+                </h3>
               </div>
 
-              {/* Address */}
-              <div className="mb-5 p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                <span className="text-[11px] font-mono uppercase text-slate-400 block mb-1">
-                  Workshop Address
-                </span>
-                <div className="flex items-start gap-2.5">
-                  <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+              {/* Physical Address */}
+              <div className="mb-6 p-5 rounded-xl bg-white/[0.02] border border-white/5">
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-sm font-semibold text-white">
+                    <span className="text-[11px] font-mono uppercase text-slate-400 block mb-1">
+                      Street Address
+                    </span>
+                    <p className="text-sm sm:text-base font-bold text-white leading-snug">
                       {BUSINESS_INFO.location.address}
                     </p>
-                    <p className="text-xs text-slate-400 mt-0.5">
+                    <p className="text-xs text-slate-400 mt-1">
                       At Star Oil Station, along La-Bawaleshi Road.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Phone */}
-              <div className="mb-5 p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                <span className="text-[11px] font-mono uppercase text-slate-400 block mb-1">
-                  Telephone Contact
-                </span>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2.5">
-                    <Phone className="w-4 h-4 text-amber-400 shrink-0" />
-                    <span className="text-sm font-bold text-white">
-                      {BUSINESS_INFO.contact.phoneFormatted}
-                    </span>
+              {/* Phone Line */}
+              <div className="mb-6 p-5 rounded-xl bg-white/[0.02] border border-white/5">
+                <div className="flex items-start justify-between">
+                  <div className="flex items-start gap-3">
+                    <Phone className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                    <div>
+                      <span className="text-[11px] font-mono uppercase text-slate-400 block mb-1">
+                        Direct Phone Contact
+                      </span>
+                      <p className="text-lg font-bold text-white tracking-wide">
+                        {BUSINESS_INFO.contact.phoneFormatted}
+                      </p>
+                    </div>
                   </div>
                   <a
                     href={`tel:${BUSINESS_INFO.contact.phoneRaw}`}
-                    className="px-3 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-xs font-semibold text-white border border-white/10 transition-colors"
+                    className="px-3.5 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-xs font-bold text-white border border-white/10 transition-colors"
                   >
                     Call
                   </a>
                 </div>
               </div>
 
-              {/* Hours placeholder */}
-              <div className="mb-6 p-4 rounded-xl bg-white/[0.02] border border-white/5 text-xs text-slate-400 flex items-start gap-2.5">
+              {/* Operating Hours Note */}
+              <div className="mb-8 p-4 rounded-xl bg-white/[0.02] border border-white/5 flex items-start gap-3 text-xs text-slate-400">
                 <Clock className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                 <div>
                   <span className="font-semibold text-slate-300 block mb-0.5">Operating Hours</span>
-                  <span>Hours to be confirmed with owner. Enquiries welcome anytime via WhatsApp or phone.</span>
+                  <span>Hours to be confirmed by workshop owner. Please call or WhatsApp ahead to confirm availability.</span>
                 </div>
               </div>
             </div>
 
             {/* Direct Action Buttons */}
-            <div className="flex flex-col gap-3 pt-4 border-t border-white/5">
+            <div className="space-y-3 pt-6 border-t border-white/10">
               <a
-                href={BUSINESS_INFO.contact.getWhatsAppUrl()}
+                href={BUSINESS_INFO.location.directionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full py-3.5 px-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-black text-xs font-bold transition-colors shadow-sm"
+                className="flex items-center justify-center gap-2 w-full py-3.5 px-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-black text-xs font-bold uppercase tracking-wider transition-colors shadow-md"
               >
-                <MessageSquare className="w-4 h-4" />
-                <span>Chat on WhatsApp (+233 54 730 5045)</span>
+                <Navigation className="w-4 h-4" />
+                <span>Get Directions (Google Maps)</span>
               </a>
 
               <div className="grid grid-cols-2 gap-3">
                 <a
-                  href={BUSINESS_INFO.location.directionsUrl}
+                  href={BUSINESS_INFO.contact.getWhatsAppUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-white text-xs font-semibold border border-white/10 transition-colors"
+                  className="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-[#181B26] hover:bg-[#202534] text-white text-xs font-bold uppercase tracking-wider border border-white/10 transition-colors"
                 >
-                  <Navigation className="w-3.5 h-3.5 text-amber-400" />
-                  <span>Get Directions</span>
+                  <MessageSquare className="w-4 h-4 text-amber-400" />
+                  <span>WhatsApp</span>
                 </a>
+
                 <a
                   href={`tel:${BUSINESS_INFO.contact.phoneRaw}`}
-                  className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-white text-xs font-semibold border border-white/10 transition-colors"
+                  className="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-[#181B26] hover:bg-[#202534] text-white text-xs font-bold uppercase tracking-wider border border-white/10 transition-colors"
                 >
-                  <Phone className="w-3.5 h-3.5 text-amber-400" />
+                  <Phone className="w-4 h-4 text-amber-400" />
                   <span>Call Now</span>
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Clean Robust Map Container */}
-          <div className="lg:col-span-7 rounded-2xl bg-[#13161C] border border-white/8 overflow-hidden shadow-xl min-h-[460px] flex flex-col relative">
-            {/* Absolute map iframe ensuring full container fill without collapsing */}
+          {/* Right Column: Google Map Container */}
+          <div className="lg:col-span-7 rounded-2xl bg-[#12141C] border border-white/10 overflow-hidden shadow-2xl min-h-[460px] flex flex-col relative">
             <div className="relative flex-1 w-full min-h-[380px] bg-[#14171E] overflow-hidden">
               <iframe
                 title="Auto Perfection Centre Location Map"
@@ -128,44 +129,39 @@ export const LocationSection = () => {
                 referrerPolicy="no-referrer-when-downgrade"
               />
 
-              {/* Floating Workshop Badge on Map */}
-              <div className="absolute top-4 left-4 z-10 p-3.5 rounded-xl bg-[#0C0D10]/92 backdrop-blur-md border border-white/10 shadow-xl max-w-xs">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="w-2.5 h-2.5 rounded-full bg-amber-400" />
-                  <span className="text-xs font-bold text-white tracking-wide uppercase">
-                    Auto Perfection Centre
-                  </span>
-                </div>
-                <p className="text-[11px] text-slate-300">
+              {/* Floating Pin Card */}
+              <div className="absolute top-4 left-4 z-10 p-3.5 rounded-xl bg-[#0A0B0E]/95 backdrop-blur-md border border-white/10 shadow-xl max-w-xs">
+                <span className="font-display font-black text-xs text-white uppercase tracking-wider block">
+                  {BUSINESS_INFO.name}
+                </span>
+                <p className="text-[11px] text-slate-300 mt-0.5">
                   Star Oil, La-Bawaleshi Road, Accra
                 </p>
                 <a
                   href={BUSINESS_INFO.location.directionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 inline-flex items-center gap-1 text-[11px] font-semibold text-amber-400 hover:text-amber-300"
+                  className="mt-2 inline-flex items-center gap-1 text-[11px] font-bold text-amber-400 hover:text-amber-300 uppercase tracking-wide"
                 >
                   Get Directions <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
             </div>
 
-            {/* Map Footer Bar */}
-            <div className="p-4 bg-[#111318] border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
-              <span className="flex items-center gap-1.5">
+            {/* Map Card Footer */}
+            <div className="p-4 bg-[#0E1017] border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
+              <span className="flex items-center gap-1.5 font-medium">
                 <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
                 Star Oil, La-Bawaleshi Road, Accra, Ghana
               </span>
-              <div className="flex items-center gap-3">
-                <a
-                  href={BUSINESS_INFO.location.googleMapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-amber-400 hover:text-amber-300 font-semibold inline-flex items-center gap-1 transition-colors"
-                >
-                  View on Google Maps <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              </div>
+              <a
+                href={BUSINESS_INFO.location.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-amber-400 hover:text-amber-300 font-bold inline-flex items-center gap-1 transition-colors uppercase tracking-wider text-[11px]"
+              >
+                Open in Google Maps <ExternalLink className="w-3.5 h-3.5" />
+              </a>
             </div>
           </div>
         </div>

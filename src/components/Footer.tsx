@@ -32,17 +32,16 @@ export const Footer = () => {
           {/* Verified Services Links */}
           <div className="md:col-span-4">
             <span className="text-xs font-mono uppercase tracking-widest text-slate-400 block mb-4">
-              Workshop Capabilities
+              Services
             </span>
             <ul className="space-y-2 text-xs">
               {BUSINESS_INFO.services.map((svc) => (
                 <li key={svc.id}>
                   <a
                     href="#services"
-                    className="text-slate-300 hover:text-amber-400 transition-colors flex items-center gap-2"
+                    className="text-slate-300 hover:text-amber-400 transition-colors block"
                   >
-                    <span className="font-mono text-amber-400 text-[11px]">{svc.number}</span>
-                    <span>{svc.name}</span>
+                    {svc.name}
                   </a>
                 </li>
               ))}

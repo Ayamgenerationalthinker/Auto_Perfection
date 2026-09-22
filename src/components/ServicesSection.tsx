@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, ShieldCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { BUSINESS_INFO, type ServiceItem } from "../data/business";
 
 export const ServicesSection = () => {
@@ -12,23 +12,18 @@ export const ServicesSection = () => {
     <section id="services" className="py-24 bg-[#0A0C0F] border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
-            <span className="text-xs font-mono uppercase tracking-widest text-amber-400 block mb-2">
-              Verified Capabilities
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-display font-black text-white tracking-tight uppercase">
-              Automotive Services
-            </h2>
-          </div>
-          <p className="text-xs sm:text-sm text-slate-400 max-w-md font-normal">
+        <div className="mb-14">
+          <h2 className="text-3xl sm:text-5xl font-display font-black text-white tracking-tight uppercase">
+            Automotive Services
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-400 max-w-md font-normal mt-2">
             Specialized automotive service categories provided by Auto Perfection Centre.
           </p>
         </div>
 
         {/* Desktop Editorial Interactive Layout */}
         <div className="hidden lg:grid lg:grid-cols-12 gap-10 items-stretch">
-          {/* Left Column: Numbered Service Navigation */}
+          {/* Left Column: Clean Service Navigation (No numbers) */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-3">
             {BUSINESS_INFO.services.map((svc) => {
               const isActive = svc.id === activeId;
@@ -45,26 +40,17 @@ export const ServicesSection = () => {
                   }`}
                   aria-pressed={isActive}
                 >
-                  <div className="flex items-center gap-5">
-                    <span
-                      className={`font-mono text-sm font-bold transition-colors ${
-                        isActive ? "text-amber-400" : "text-slate-500 group-hover:text-slate-300"
+                  <div>
+                    <h3
+                      className={`font-display font-extrabold text-xl uppercase tracking-wide transition-colors ${
+                        isActive ? "text-white" : "text-slate-300 group-hover:text-white"
                       }`}
                     >
-                      {svc.number}
-                    </span>
-                    <div>
-                      <h3
-                        className={`font-display font-extrabold text-lg uppercase tracking-wide transition-colors ${
-                          isActive ? "text-white" : "text-slate-300 group-hover:text-white"
-                        }`}
-                      >
-                        {svc.name}
-                      </h3>
-                      <p className="text-xs text-slate-400 line-clamp-1 mt-0.5 font-normal">
-                        {svc.tagline}
-                      </p>
-                    </div>
+                      {svc.name}
+                    </h3>
+                    <p className="text-xs text-slate-400 line-clamp-1 mt-1 font-normal">
+                      {svc.tagline}
+                    </p>
                   </div>
 
                   <ArrowRight
@@ -79,7 +65,7 @@ export const ServicesSection = () => {
             })}
           </div>
 
-          {/* Right Column: Active Service Visual (Clean Editorial - NO buttons) */}
+          {/* Right Column: Active Service Visual */}
           <div className="lg:col-span-7 flex">
             <div className="w-full rounded-2xl bg-[#12151D] border border-white/10 overflow-hidden shadow-2xl flex flex-col justify-between">
               {/* Strictly Verified Corresponding Photo */}
@@ -92,37 +78,25 @@ export const ServicesSection = () => {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#12151D] via-transparent to-black/20" />
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 rounded-md bg-[#0A0C10]/90 backdrop-blur-sm border border-white/10 font-mono text-xs text-amber-400 font-bold">
-                    {activeService.number} • VERIFIED CAPABILITY
-                  </span>
-                </div>
               </div>
 
               {/* Service Details */}
-              <div className="p-8 flex-1 flex flex-col justify-between">
-                <div>
-                  <h4 className="text-2xl font-display font-black text-white uppercase tracking-wide mb-2">
-                    {activeService.name}
-                  </h4>
-                  <p className="text-sm font-semibold text-amber-400/90 mb-3 font-display uppercase tracking-wider">
-                    {activeService.tagline}
-                  </p>
-                  <p className="text-sm text-slate-300 leading-relaxed font-normal">
-                    {activeService.description}
-                  </p>
-                </div>
-
-                <div className="pt-6 border-t border-white/10 flex items-center gap-2 text-xs text-slate-400">
-                  <ShieldCheck className="w-4 h-4 text-amber-400 shrink-0" />
-                  <span>Verified service category at Auto Perfection Centre</span>
-                </div>
+              <div className="p-8 flex-1 flex flex-col justify-center">
+                <h4 className="text-3xl font-display font-black text-white uppercase tracking-wide mb-2">
+                  {activeService.name}
+                </h4>
+                <p className="text-sm font-semibold text-amber-400/90 mb-3 font-display uppercase tracking-wider">
+                  {activeService.tagline}
+                </p>
+                <p className="text-sm text-slate-300 leading-relaxed font-normal">
+                  {activeService.description}
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Mobile Editorial Cards */}
+        {/* Mobile Editorial Cards (No numbers) */}
         <div className="lg:hidden space-y-6">
           {BUSINESS_INFO.services.map((svc) => (
             <div
@@ -137,9 +111,6 @@ export const ServicesSection = () => {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#12151D] via-transparent to-black/30" />
-                <span className="absolute top-3 left-3 px-2.5 py-1 rounded bg-[#0A0C10]/90 text-amber-400 font-mono text-[11px] font-bold">
-                  {svc.number}
-                </span>
                 <h3 className="absolute bottom-3 left-4 right-4 text-xl font-display font-black text-white uppercase tracking-wide">
                   {svc.name}
                 </h3>

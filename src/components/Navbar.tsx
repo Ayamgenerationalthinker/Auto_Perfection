@@ -37,7 +37,7 @@ export const Navbar = () => {
               href="#services"
               className="text-xs font-semibold uppercase tracking-widest text-slate-300 hover:text-white transition-colors"
             >
-              Services (01–05)
+              Services
             </a>
             <a
               href="#workshop-motion"
@@ -79,7 +79,7 @@ export const Navbar = () => {
                 onClick={() => setMobileMenuOpen(false)}
                 className="px-3 py-2 text-sm font-semibold text-white hover:text-amber-400 rounded-lg hover:bg-white/5"
               >
-                Services (01–05)
+                Services
               </a>
               <a
                 href="#workshop-motion"

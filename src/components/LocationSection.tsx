@@ -115,27 +115,57 @@ export const LocationSection = () => {
             </div>
           </div>
 
-          {/* Clean Map Container */}
-          <div className="lg:col-span-7 rounded-2xl bg-[#13161C] border border-white/8 overflow-hidden shadow-xl min-h-[380px] flex flex-col">
-            <div className="flex-1 w-full relative min-h-[320px] bg-[#14171E]">
+          {/* Clean Robust Map Container */}
+          <div className="lg:col-span-7 rounded-2xl bg-[#13161C] border border-white/8 overflow-hidden shadow-xl min-h-[460px] flex flex-col relative">
+            {/* Absolute map iframe ensuring full container fill without collapsing */}
+            <div className="relative flex-1 w-full min-h-[380px] bg-[#14171E] overflow-hidden">
               <iframe
                 title="Auto Perfection Centre Location Map"
                 src="https://maps.google.com/maps?q=Star+Oil+La-Bawaleshi+Road+Accra+Ghana&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                className="w-full h-full border-0"
+                className="absolute inset-0 w-full h-full border-0"
                 loading="lazy"
                 allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
               />
+
+              {/* Floating Workshop Badge on Map */}
+              <div className="absolute top-4 left-4 z-10 p-3.5 rounded-xl bg-[#0C0D10]/92 backdrop-blur-md border border-white/10 shadow-xl max-w-xs">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="w-2.5 h-2.5 rounded-full bg-amber-400" />
+                  <span className="text-xs font-bold text-white tracking-wide uppercase">
+                    Auto Perfection Centre
+                  </span>
+                </div>
+                <p className="text-[11px] text-slate-300">
+                  Star Oil, La-Bawaleshi Road, Accra
+                </p>
+                <a
+                  href={BUSINESS_INFO.location.directionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-flex items-center gap-1 text-[11px] font-semibold text-amber-400 hover:text-amber-300"
+                >
+                  Get Directions <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
             </div>
-            <div className="p-4 bg-[#111318] border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
-              <span>Star Oil, La-Bawaleshi Road, Accra, Ghana</span>
-              <a
-                href={BUSINESS_INFO.location.googleMapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-amber-400 hover:text-amber-300 font-semibold inline-flex items-center gap-1 transition-colors"
-              >
-                Open in Google Maps <ExternalLink className="w-3.5 h-3.5" />
-              </a>
+
+            {/* Map Footer Bar */}
+            <div className="p-4 bg-[#111318] border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
+              <span className="flex items-center gap-1.5">
+                <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                Star Oil, La-Bawaleshi Road, Accra, Ghana
+              </span>
+              <div className="flex items-center gap-3">
+                <a
+                  href={BUSINESS_INFO.location.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-amber-400 hover:text-amber-300 font-semibold inline-flex items-center gap-1 transition-colors"
+                >
+                  View on Google Maps <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

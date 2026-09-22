@@ -10,7 +10,7 @@ export const LocationSection = () => {
           <span className="text-xs font-mono uppercase tracking-widest text-amber-400 block mb-2">
             Workshop Location
           </span>
-          <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight uppercase">
+          <h2 className="text-3xl sm:text-5xl font-display font-black text-white tracking-tight uppercase">
             Find Us In Accra
           </h2>
           <p className="text-sm sm:text-base text-slate-300 mt-2 font-normal">
@@ -19,10 +19,9 @@ export const LocationSection = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Left Column: Prominent Workshop Information */}
+          {/* Left Column: Workshop Details */}
           <div className="lg:col-span-5 p-8 sm:p-10 rounded-2xl bg-[#12141C] border border-white/10 flex flex-col justify-between shadow-2xl">
             <div>
-              {/* Brand Wordmark Lockup */}
               <div className="mb-8">
                 <span className="text-xs font-mono uppercase tracking-wider text-amber-400 block mb-1">
                   Automotive Workshop
@@ -66,14 +65,14 @@ export const LocationSection = () => {
                   </div>
                   <a
                     href={`tel:${BUSINESS_INFO.contact.phoneRaw}`}
-                    className="px-3.5 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-xs font-bold text-white border border-white/10 transition-colors"
+                    className="px-3.5 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-xs font-bold text-white border border-white/10 transition-colors uppercase tracking-wider"
                   >
                     Call
                   </a>
                 </div>
               </div>
 
-              {/* Operating Hours Note */}
+              {/* Operating Hours Placeholder */}
               <div className="mb-8 p-4 rounded-xl bg-white/[0.02] border border-white/5 flex items-start gap-3 text-xs text-slate-400">
                 <Clock className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                 <div>

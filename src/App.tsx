@@ -1,36 +1,43 @@
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
+import { BrakeAssembly3D } from "./components/BrakeAssembly3D";
 import { ServicesSection } from "./components/ServicesSection";
-import { TrustBar } from "./components/TrustBar";
+import { AutomotiveVideoPlayer } from "./components/AutomotiveVideoPlayer";
 import { LocationSection } from "./components/LocationSection";
+import { TrustBar } from "./components/TrustBar";
 import { Footer } from "./components/Footer";
 import { MobileActionBar } from "./components/MobileActionBar";
 
 export function App() {
   return (
-    <div className="min-h-screen bg-[#0A0B0E] text-[#F3F4F6] flex flex-col selection:bg-amber-400 selection:text-black">
-      {/* Navigation */}
+    <div className="min-h-screen bg-[#0B0D10] text-[#F4F5F7] flex flex-col selection:bg-amber-400 selection:text-black">
+      {/* 01 Brand & Quick Navigation */}
       <Navbar />
 
-      {/* Main Narrative Flow */}
       <main className="flex-grow">
-        {/* 01 WHO & WHAT: Brand, Accra, Location, CTAs */}
+        {/* 02 Hero: Brand Presence & Immediate Human Understanding */}
         <Hero />
 
-        {/* 02 SERVICES: 01-05 Editorial Interactive Capabilities */}
+        {/* 03 3D Mechanical Interaction: Precision Inspection (Ventilated Rotor & Caliper) */}
+        <BrakeAssembly3D />
+
+        {/* 04 Editorial Services: 01 to 05 Verified Capabilities */}
         <ServicesSection />
 
-        {/* 03 WHERE: Major Location Feature & Navigation */}
+        {/* 05 Cinematic Motion Studies: Workshop Precision in Action */}
+        <AutomotiveVideoPlayer />
+
+        {/* 06 Primary Workshop Location & Google Map Navigation */}
         <LocationSection />
 
-        {/* 04 REPUTATION: 4.9 ★ Google Reviews */}
+        {/* 07 Google Reputation: 4.9 ★ Rating & 64 Reviews */}
         <TrustBar />
       </main>
 
-      {/* 05 CONTACT & FOOTER */}
+      {/* 08 Footer */}
       <Footer />
 
-      {/* Mobile Sticky Quick Action Bar */}
+      {/* Mobile Sticky Quick Action Bar: CALL | WHATSAPP | DIRECTIONS */}
       <MobileActionBar />
     </div>
   );

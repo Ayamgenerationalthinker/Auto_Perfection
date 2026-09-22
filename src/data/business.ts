@@ -11,7 +11,9 @@ export interface ServiceItem {
 
 export const BUSINESS_INFO = {
   name: "AUTO PERFECTION CENTRE",
-  tagline: "Automotive Services in Accra",
+  tagline: "Professional Auto Care. Done Right.",
+  supportingCopy: "Reliable automotive service for drivers in Accra.",
+  detailedIntro: "Specialized auto repair, vehicle electrical service, engine oil changes, automotive spray painting, and body parts. Located at Star Oil on La-Bawaleshi Road.",
   location: {
     address: "Star Oil, La-Bawaleshi Road, Accra, Ghana",
     station: "Star Oil Station",
@@ -44,8 +46,8 @@ export const BUSINESS_INFO = {
       name: "Auto Repair",
       shortTitle: "REPAIR",
       tagline: "Mechanical repair and scheduled vehicle maintenance.",
-      description: "General mechanical troubleshooting, component replacement, and scheduled vehicle servicing to keep your car operating safely on Accra roads.",
-      image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80",
+      description: "Comprehensive mechanical troubleshooting, suspension repair, engine servicing, and maintenance to keep your automobile safe on Accra roads.",
+      image: "/images/services/auto-repair.jpg",
       imageAlt: "Technician inspecting vehicle mechanical components on workshop lift",
     },
     {
@@ -54,8 +56,8 @@ export const BUSINESS_INFO = {
       name: "Auto Electrical Service",
       shortTitle: "ELECTRICAL",
       tagline: "Electrical system diagnostics and component repair.",
-      description: "Diagnostic inspection and repair of automotive electrical wiring, batteries, alternators, starter motors, lighting, and vehicle electronics.",
-      image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
+      description: "Diagnostic assessment and repair of automotive wiring, starter motors, alternators, battery systems, lighting, and electronic components.",
+      image: "/images/services/auto-electrical.jpg",
       imageAlt: "Automotive technician inspecting electrical circuits and vehicle diagnostic equipment",
     },
     {
@@ -63,9 +65,9 @@ export const BUSINESS_INFO = {
       number: "03",
       name: "Oil Change Service",
       shortTitle: "OIL CHANGE",
-      tagline: "Engine oil replacement and fluid servicing.",
-      description: "Engine oil drainage, fresh oil replacement, oil filter renewal, and essential fluid level checks formulated for engine longevity.",
-      image: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1200&q=80",
+      tagline: "Engine oil replacement and vital fluid servicing.",
+      description: "Routine engine oil change, oil filter renewal, and fluid level checks formulated to protect engine health under local driving conditions.",
+      image: "/images/services/oil-change.jpg",
       imageAlt: "Hands-on automotive engine oil service and maintenance",
     },
     {
@@ -74,8 +76,8 @@ export const BUSINESS_INFO = {
       name: "Auto Painting",
       shortTitle: "PAINTING",
       tagline: "Vehicle spray painting and body refinishing.",
-      description: "Spray booth painting, color matching, scratch and panel refinishing, and clear coating for a clean, durable automotive exterior finish.",
-      image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80",
+      description: "Automotive spray booth painting, computerized color matching, scratch restoration, and protective clear coating for high-standard vehicle finish.",
+      image: "/images/services/auto-painting.jpg",
       imageAlt: "Professional automotive spray painting in workshop paint booth",
     },
     {
@@ -84,8 +86,8 @@ export const BUSINESS_INFO = {
       name: "Auto Body Parts",
       shortTitle: "BODY PARTS",
       tagline: "Exterior body panels and replacement parts.",
-      description: "Sourcing, alignment, and installation of vehicle body panels, bumpers, fenders, grilles, lights, and structural exterior replacements.",
-      image: "https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=1200&q=80",
+      description: "Sourcing and fitment of exterior body panels, bumpers, fenders, grilles, lights, and structural vehicle replacements.",
+      image: "/images/services/auto-body-parts.jpg",
       imageAlt: "Automotive replacement exterior panels and body parts in workshop",
     },
   ] as ServiceItem[],

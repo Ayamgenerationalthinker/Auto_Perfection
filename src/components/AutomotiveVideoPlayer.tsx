@@ -9,25 +9,18 @@ export const AutomotiveVideoPlayer = () => {
 
   const videoClips = [
     {
-      title: "Workshop Vehicle Inspection",
-      category: "Auto Repair",
-      description: "Hydraulic vehicle inspection, chassis alignment, and mechanical torque procedures.",
-      videoUrl: "https://cdn.coverr.co/videos/coverr-car-inspection-in-a-garage-9134/1080p.mp4",
-      poster: "/images/services/auto-repair.jpg",
-    },
-    {
-      title: "Mechanical Component Repair",
+      title: "Workshop Engineering & Motion",
       category: "Mechanical Service",
-      description: "Precision component replacement and workshop mechanical craftsmanship.",
-      videoUrl: "https://cdn.coverr.co/videos/coverr-mechanic-repairing-a-car-2623/1080p.mp4",
-      poster: "/images/services/oil-change.jpg",
+      description: "Automotive craftsmanship, precision inspection, and vehicle mechanical diagnostics.",
+      videoUrl: "/videos/hero-motion.mp4",
+      poster: "/images/hero/hero-workshop.jpg",
     },
     {
-      title: "Engine Diagnostics & Systems",
-      category: "Auto Electrical",
-      description: "Sensor calibration, battery voltage checks, and diagnostic scanning.",
-      videoUrl: "https://cdn.coverr.co/videos/coverr-mechanic-examining-car-engine-5536/1080p.mp4",
-      poster: "/images/services/auto-electrical.jpg",
+      title: "Vehicle Servicing & Detailing",
+      category: "Workshop Craft",
+      description: "Automotive technical maintenance and workshop precision procedures.",
+      videoUrl: "/videos/workshop-motion.mp4",
+      poster: "/images/services/oil-change.jpg",
     },
   ];
 
@@ -72,7 +65,7 @@ export const AutomotiveVideoPlayer = () => {
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-slate-400 max-w-md font-normal">
-            Hover over the video to play automotive workshop footage.
+            Hover over the video to play workshop motion footage.
           </p>
         </div>
 
@@ -86,7 +79,7 @@ export const AutomotiveVideoPlayer = () => {
             onClick={toggleManualPlay}
           >
             <div className="relative w-full h-[360px] sm:h-[480px] bg-black flex items-center justify-center overflow-hidden">
-              {/* Native HTML5 Video Element - Zero Pinterest Branding */}
+              {/* Native Local HTML5 Video */}
               <video
                 ref={videoRef}
                 key={currentClip.videoUrl}
@@ -198,13 +191,13 @@ export const AutomotiveVideoPlayer = () => {
               })}
             </div>
 
-            {/* Note */}
+            {/* Local Video Note */}
             <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 text-xs text-slate-400 font-normal">
               <span className="font-semibold text-slate-300 block mb-1">
-                Workshop Footage Architecture
+                Local Workshop Media
               </span>
               <p className="text-[11px] leading-relaxed">
-                Configured for seamless local video playback with zero external branding or third-party ads.
+                Using downloaded video media with zero external dependencies, ready for offline and immediate performance.
               </p>
             </div>
           </div>

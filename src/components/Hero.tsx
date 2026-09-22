@@ -24,31 +24,34 @@ export const Hero = () => {
             </p>
           </div>
 
-          {/* Right Column: Local Verified Workshop Photography */}
+          {/* Right Column: High-End Cinematic Automotive Video */}
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-2xl overflow-hidden bg-[#141720] border border-white/10 shadow-2xl group">
-              <div className="h-[400px] sm:h-[460px] w-full relative bg-[#101217]">
-                <img
-                  src="/images/hero/hero-workshop.jpg"
-                  alt="Auto Perfection Centre workshop environment"
+              <div className="h-[400px] sm:h-[460px] w-full relative bg-black">
+                <video
+                  src="/videos/hero-motion.mp4"
+                  poster="/images/hero/hero-workshop.jpg"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
                   className="w-full h-full object-cover object-center filter brightness-95 contrast-105"
-                  loading="eager"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D10] via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D10] via-transparent to-transparent opacity-70 pointer-events-none" />
               </div>
 
               {/* Minimal Editorial Badge */}
-              <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#0D0F14]/90 backdrop-blur-md border border-white/10 flex items-center justify-between">
+              <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#0D0F14]/90 backdrop-blur-md border border-white/10 flex items-center justify-between pointer-events-none">
                 <div>
                   <span className="text-[10px] font-mono uppercase tracking-widest text-amber-400 block mb-0.5">
-                    Workshop Bay
+                    Workshop Motion
                   </span>
                   <span className="text-xs font-display font-bold text-white uppercase tracking-wider block">
                     Auto Perfection Centre
                   </span>
                 </div>
                 <span className="text-[11px] font-mono text-slate-400">
-                  Precision Service
+                  Precision Craft
                 </span>
               </div>
             </div>
